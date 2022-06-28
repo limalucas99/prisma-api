@@ -3,7 +3,7 @@
 /node_modules
 .env
 .docker/dbdata
-package-log.json
+package-lock.json
 
 # Logs
 logs
