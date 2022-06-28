@@ -35,3 +35,5 @@ npx prisma init
 
 npx prisma migrate dev --name init -> cria os arquivos de migração de acordo com o provider utilizado
 
+git rm --cached package-lock.json -> remove o package-lock.json do controle de versão (Somente assim o git passa a ignorá-lo)
+
