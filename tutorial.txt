@@ -3,3 +3,35 @@ nest new prisma-api
 npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata @nestjs/config
 
 Instalar extensões - editorConfig, ESLint e Prettier
+
+chmod +x .docker/entrypoint.sh -> dar permissão para o script ser executado
+
+sudo chmod 777 prisma-api/
+
+incluir:
+
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        ".docker"
+    ]
+
+no arquivo tsconfig.json
+
+SEMPRE deletar o node_modules antes de rodar os containers
+SEMPRE deletar o package-lock.json antes de rodar os containers
+
+sudo chmod -R 777 prisma-api/ -> dar permissão de escrita para todos os arquivos do projeto
+
+docker-compose up -d  -> sobe o docker sem lockar o terminal
+
+docker-compose exec app sh -> entrar dentro do container, nesse caso é "sh" e não "bash" por que foi definido na primeira linha do entrypoint.sh #!/bin/sh
+
+npx prisma init
+
+npx prisma migrate dev --name init -> cria os arquivos de migração de acordo com o provider utilizado
+
