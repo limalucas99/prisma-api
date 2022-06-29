@@ -41,3 +41,12 @@ npx prisma migrate dev --name init -> cria os arquivos de migração de acordo c
 
 git rm --cached package-lock.json -> remove o package-lock.json do controle de versão (Somente assim o git passa a ignorá-lo)
 
+npm i class-validator class-transformer
+
+A ideia de usar repository é que caso você queira trocar de Query Builder, somente vai modificar o arquivo repository
+
+findUnique do Prisma -> Só deixa filtrar por campos que sejam únicos. Ex: id/email/etc
+
+npx prisma studio -> Abre o Prisma Studio no browser
+
+Por padrão, os parâmetros de uma requisição chegam ao servidor como string
