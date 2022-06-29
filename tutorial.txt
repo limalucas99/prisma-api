@@ -25,7 +25,11 @@ no arquivo tsconfig.json
 SEMPRE deletar o node_modules antes de rodar os containers
 SEMPRE deletar o package-lock.json antes de rodar os containers
 
-sudo chmod -R 777 prisma-api/ -> dar permissão de escrita para todos os arquivos do projeto
+find prisma-api/ -type d -exec chmod 777 {} \; -> dar permissão de escrita para todos as pastas do projeto
+
+find prisma-api/ -type f -exec chmod 777 {} \; -> dar permissão de escrita para todos os arquivos do projeto
+
+sudo chmod -R 777 prisma-api/ -> dar permissão de escrita para todos os arquivos do projeto  (Só funciona no primeiro nível)
 
 docker-compose up -d  -> sobe o docker sem lockar o terminal
 
