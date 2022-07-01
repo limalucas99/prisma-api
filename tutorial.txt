@@ -50,3 +50,11 @@ findUnique do Prisma -> Só deixa filtrar por campos que sejam únicos. Ex: id/e
 npx prisma studio -> Abre o Prisma Studio no browser
 
 Por padrão, os parâmetros de uma requisição chegam ao servidor como string
+
+After you change your data model, you'll need to manually re-generate Prisma Client to ensure the code inside node_modules/.prisma/client gets updated:
+
+npx prisma generate
+
+Exception Filter -> Captura toda exceção que não é tratada pelo dev
+
+nest g filter common/filters/http-exception --no-spec
