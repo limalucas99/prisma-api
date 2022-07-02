@@ -58,3 +58,5 @@ npx prisma generate
 Exception Filter -> Captura toda exceção que não é tratada pelo dev
 
 nest g filter common/filters/http-exception --no-spec
+
+npx nest g res posts
