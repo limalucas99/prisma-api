@@ -60,3 +60,27 @@ Exception Filter -> Captura toda exceção que não é tratada pelo dev
 nest g filter common/filters/http-exception --no-spec
 
 npx nest g res posts
+
+npm install --save @nestjs/swagger swagger-ui-express
+
+alterar o json do arquivo nest-cli.json
+
+{
+    "$schema": "https://json.schemastore.org/nest-cli",
+    "collection": "@nestjs/schematics",
+    "sourceRoot": "src",
+    "compilerOptions": {
+        "deleteOutDir": true,
+        "plugins": [
+            "@nestjs/swagger/plugin"
+        ]
+    }
+}
+
+O NEST rodando com watch só pega mudanças nos arquivos dentro da pasta src
+
+mudar o import do PartialType em todos os .dto de update para
+
+import { PartialType } from '@nestjs/swagger';
+
+
