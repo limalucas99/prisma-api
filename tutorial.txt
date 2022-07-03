@@ -59,7 +59,7 @@ Exception Filter -> Captura toda exceção que não é tratada pelo dev
 
 nest g filter common/filters/http-exception --no-spec
 
-npx nest g res posts
+nest g res posts
 
 npm install --save @nestjs/swagger swagger-ui-express
 
@@ -83,4 +83,8 @@ mudar o import do PartialType em todos os .dto de update para
 
 import { PartialType } from '@nestjs/swagger';
 
+------------ Auth ------------------------
+
+nest g module auth --no-spec
+nest g service auth --no-spec
 
