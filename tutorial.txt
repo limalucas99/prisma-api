@@ -88,3 +88,4 @@ import { PartialType } from '@nestjs/swagger';
 nest g module auth --no-spec
 nest g service auth --no-spec
 
+npm i --save-dev @types/bcrypt

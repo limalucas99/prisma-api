@@ -10,7 +10,7 @@ export class UsersRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async create(createUserDto: CreateUserDto): Promise<UserEntity> {
-        createUserDto.password = bcrypt.hash(createUserDto.password, 10);
+        createUserDto.password = await bcrypt.hash(createUserDto.password, 10);
         return this.prisma.user.create({
             data: createUserDto,
             include: {
@@ -49,6 +49,14 @@ export class UsersRepository {
                         createdAt: true,
                     },
                 },
+            },
+        });
+    }
+
+    async findByEmail(email: string): Promise<UserEntity> {
+        return this.prisma.user.findUnique({
+            where: {
+                email,
             },
         });
     }
